@@ -1,0 +1,7 @@
+src/main/resources/db.properties
+/build/
+/target/
+*.class
+.metadata/
+.DS_Store
+Thumbs.db

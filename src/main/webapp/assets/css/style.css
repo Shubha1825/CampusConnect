@@ -1,0 +1,414 @@
+/* ============================================
+   CampusConnect — "Varsity" design system
+   Ink Navy + Varsity Gold, corkboard signature
+   ============================================ */
+
+:root {
+    --ink: #14213D;        /* primary dark - nav, headings */
+    --ink-light: #1F3057;
+    --gold: #FCA311;       /* accent - CTAs, highlights */
+    --gold-dark: #E08E00;
+    --chalk: #F5F3EE;      /* page background */
+    --paper: #FFFFFF;      /* card background */
+    --brick: #E63946;      /* LOST badge / errors */
+    --field: #2A9D8F;      /* FOUND badge / success */
+    --slate: #52606D;      /* secondary text */
+    --cork: #C9A66B;       /* corkboard background */
+    --cork-dark: #A9814F;
+
+    --radius: 12px;
+    --shadow: 0 6px 20px rgba(20, 33, 61, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--chalk);
+    margin: 0;
+    color: var(--ink);
+}
+
+h1, h2, h3, .display {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* ---------- Top nav: thick ink bar, gold lane-line ---------- */
+nav.cc-nav {
+    background: var(--ink);
+    border-bottom: 5px solid var(--gold);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.cc-nav .brand {
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+nav.cc-nav .brand .tag {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+nav.cc-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: border-color 0.15s ease;
+}
+
+nav.cc-nav a:hover,
+nav.cc-nav a:focus-visible {
+    border-color: var(--gold);
+    outline: none;
+}
+
+/* ---------- Generic containers ---------- */
+.cc-content {
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.cc-card {
+    background: var(--paper);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ---------- Hero (index.jsp) ---------- */
+.cc-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(252, 163, 17, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(230, 57, 70, 0.12), transparent 40%),
+        var(--ink);
+}
+
+.cc-hero .cc-card {
+    max-width: 480px;
+    border-top: 6px solid var(--gold);
+}
+
+.cc-hero h1 {
+    font-size: 40px;
+    margin: 0 0 4px;
+    color: var(--ink);
+}
+
+.cc-hero .eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.cc-hero .subtitle {
+    color: var(--slate);
+    margin-bottom: 26px;
+    font-size: 15px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 13px;
+    padding: 13px 26px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    box-shadow: 0 4px 0 var(--gold-dark);
+}
+.btn-primary:hover { box-shadow: 0 2px 0 var(--gold-dark); transform: translateY(2px); }
+
+.btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+}
+.btn-secondary:hover { background: var(--ink); color: white; }
+
+.btn-block { width: 100%; text-align: center; }
+
+/* ---------- Forms ---------- */
+.field { margin-top: 16px; text-align: left; }
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+}
+
+.field input, .field select, .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #E2E2E2;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.15s ease;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.field input.invalid { border-color: var(--brick); }
+.field input.valid { border-color: var(--field); }
+
+.field-error {
+    color: var(--brick);
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 600;
+    display: none;
+}
+.field-error.show { display: block; }
+
+.password-wrap { position: relative; }
+.password-wrap input { padding-right: 46px; }
+.toggle-pw {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+.toggle-pw:hover { color: var(--ink); }
+
+/* password strength meter (register.jsp) */
+.pw-strength {
+    margin-top: 8px;
+    height: 6px;
+    border-radius: 999px;
+    background: #E9E9E9;
+    overflow: hidden;
+}
+.pw-strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    transition: width 0.2s ease, background 0.2s ease;
+}
+.pw-strength-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.alert-error { background: #FDECEA; color: var(--brick); }
+.alert-success { background: #E8F6F4; color: var(--field); }
+
+/* ---------- Dashboard action cards ---------- */
+.action-row { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+
+/* ---------- Corkboard (items.jsp signature) ---------- */
+.corkboard {
+    background:
+        radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1.5px) 0 0/14px 14px,
+        var(--cork);
+    background-blend-mode: multiply;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+}
+
+.flyer {
+    background: var(--paper);
+    padding: 20px;
+    margin-bottom: 22px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 12px rgba(0,0,0,0.3);
+    position: relative;
+    transform: rotate(var(--tilt, -1deg));
+}
+.flyer:nth-child(odd) { --tilt: 1.2deg; }
+.flyer:nth-child(even) { --tilt: -1deg; }
+
+.flyer .pin {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #b3261e);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+}
+
+.flyer-header { display: flex; justify-content: space-between; align-items: center; }
+
+.patch {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: white;
+    border: 2px dashed rgba(255,255,255,0.6);
+}
+.patch.LOST { background: var(--brick); }
+.patch.FOUND { background: var(--field); }
+
+.flyer-meta {
+    color: var(--slate);
+    font-size: 13px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+}
+
+.flyer .status-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--slate);
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.search-bar input, .search-bar select {
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+}
+.search-bar input { flex: 1; }
+.search-bar button {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 24px;
+    background: var(--ink);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+details.claim-toggle summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+details.claim-toggle textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #E2E2E2;
+    font-family: inherit;
+}
+details.claim-toggle button {
+    margin-top: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.empty-state {
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+    font-weight: 600;
+}
+
+/* Accessibility: visible focus ring everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .cc-content { padding: 0 14px; }
+    nav.cc-nav { flex-direction: column; gap: 10px; padding: 14px; }
+    nav.cc-nav a { margin-left: 12px; }
+}
